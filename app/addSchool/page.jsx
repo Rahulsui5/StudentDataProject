@@ -28,27 +28,22 @@ const AddSchool = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 to-purple-50 p-4">
-      <div className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-        <h1 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 flex items-center justify-center p-6">
+      <div className="w-full max-w-2xl bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 p-8 rounded-3xl shadow-xl text-white">
+        <h1 className="text-4xl font-extrabold mb-8 text-center drop-shadow-md">
           Add School
         </h1>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="grid gap-5"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
           {/* School Name */}
           <div className="flex flex-col">
             <input
               type="text"
               placeholder="School Name"
               {...register("name", { required: true })}
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
             />
             {errors.name && (
-              <span className="text-red-500 text-sm mt-1">
-                Name is required
-              </span>
+              <span className="text-yellow-200 text-sm mt-1">Name is required</span>
             )}
           </div>
 
@@ -58,12 +53,10 @@ const AddSchool = () => {
               type="text"
               placeholder="Address"
               {...register("address", { required: true })}
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
             />
             {errors.address && (
-              <span className="text-red-500 text-sm mt-1">
-                Address is required
-              </span>
+              <span className="text-yellow-200 text-sm mt-1">Address is required</span>
             )}
           </div>
 
@@ -74,10 +67,10 @@ const AddSchool = () => {
                 type="text"
                 placeholder="City"
                 {...register("city", { required: true })}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
               />
               {errors.city && (
-                <span className="text-red-500 text-sm mt-1">City is required</span>
+                <span className="text-yellow-200 text-sm mt-1">City is required</span>
               )}
             </div>
             <div className="flex-1 flex flex-col">
@@ -85,10 +78,10 @@ const AddSchool = () => {
                 type="text"
                 placeholder="State"
                 {...register("state", { required: true })}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
               />
               {errors.state && (
-                <span className="text-red-500 text-sm mt-1">State is required</span>
+                <span className="text-yellow-200 text-sm mt-1">State is required</span>
               )}
             </div>
           </div>
@@ -99,15 +92,11 @@ const AddSchool = () => {
               <input
                 type="number"
                 placeholder="Contact Number"
-                {...register("contact", {
-                  required: true,
-                  minLength: 10,
-                  maxLength: 10,
-                })}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                {...register("contact", { required: true, minLength: 10, maxLength: 10 })}
+                className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
               />
               {errors.contact && (
-                <span className="text-red-500 text-sm mt-1">
+                <span className="text-yellow-200 text-sm mt-1">
                   Valid contact number required
                 </span>
               )}
@@ -117,12 +106,10 @@ const AddSchool = () => {
                 type="email"
                 placeholder="Email ID"
                 {...register("email_id", { required: true, pattern: /^\S+@\S+$/i })}
-                className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                className="p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 placeholder-white transition"
               />
               {errors.email_id && (
-                <span className="text-red-500 text-sm mt-1">
-                  Valid email required
-                </span>
+                <span className="text-yellow-200 text-sm mt-1">Valid email required</span>
               )}
             </div>
           </div>
@@ -133,17 +120,17 @@ const AddSchool = () => {
               type="file"
               accept="image/*"
               {...register("image", { required: true })}
-              className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="p-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-white bg-white/20 text-white transition"
             />
             {errors.image && (
-              <span className="text-red-500 text-sm mt-1">Image is required</span>
+              <span className="text-yellow-200 text-sm mt-1">Image is required</span>
             )}
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-indigo-500 text-white font-semibold py-3 rounded-lg shadow hover:bg-indigo-600 transition-all duration-300"
+            className="w-full py-3 rounded-xl font-bold bg-white text-indigo-600 hover:bg-white/90 hover:text-indigo-700 transition"
           >
             Add School
           </button>

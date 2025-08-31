@@ -11,33 +11,33 @@ const ShowSchools = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-50 to-purple-50 p-6">
-      <h1 className="text-3xl font-extrabold mb-8 text-center text-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-indigo-50 p-6">
+      <h1 className="text-4xl font-extrabold mb-10 text-center text-indigo-800 drop-shadow-md">
         Schools List
       </h1>
       {schools.length === 0 ? (
-        <p className="text-center text-gray-500">No schools available.</p>
+        <p className="text-center text-gray-500 text-lg">No schools available.</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {schools.map((school) => (
             <div
               key={school.id}
-              className="bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col items-center p-4"
+              className="bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 text-white rounded-3xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col items-center p-5"
             >
               <div className="w-full h-48 overflow-hidden rounded-2xl mb-4">
                 <img
                   src={`/schoolImages/${school.image}`}
                   alt={school.name}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300 rounded-2xl border-2 border-white"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-1 text-center">
+              <h2 className="text-2xl font-bold mb-1 text-center drop-shadow-sm">
                 {school.name}
               </h2>
-              <p className="text-gray-600 text-sm text-center mb-1">
+              <p className="text-white/90 text-sm text-center mb-1">
                 {school.address}
               </p>
-              <p className="text-gray-500 text-sm text-center">{school.city}</p>
+              <p className="text-white/80 text-sm text-center">{school.city}</p>
             </div>
           ))}
         </div>
@@ -45,4 +45,5 @@ const ShowSchools = () => {
     </div>
   );
 };
+
 export default ShowSchools;
